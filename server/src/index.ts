@@ -1,8 +1,8 @@
 import express from "express";
 import http from "http";
 import { Server } from "socket.io";
-import { connectDB } from "./db";
-import registerSocket from "./socket";
+import { connectDB } from "./db.js";
+import registerSocket from "./socket.js";
 
 const app = express();
 const server = http.createServer(app);
