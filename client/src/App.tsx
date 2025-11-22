@@ -27,7 +27,7 @@ function App() {
         {messages.map((msg) => (
           <div key={msg.id} className="message">
             <span>{msg.text}</span>
-            <small>{new Date(msg.timestamp).toLocaleTimeString()}</small>
+            <small>{new Date(msg.timestamp).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}</small>
           </div>
         ))}
       </div>
