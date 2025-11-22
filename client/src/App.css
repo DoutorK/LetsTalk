@@ -2,6 +2,8 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .status {
@@ -9,6 +11,7 @@
   padding: 0.5rem;
   border-radius: 4px;
   background-color: #1a1a1a;
+  font-size: 1rem;
 }
 
 .messages {
@@ -30,6 +33,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+.message span {
+  flex: 1;
+  margin-right: 1rem;
+  word-break: break-word;
+  white-space: pre-wrap;  
+  min-width: 0;           
 }
 
 .message small {
@@ -49,6 +62,7 @@
   border: 1px solid #333;
   background-color: #1a1a1a;
   color: white;
+  font-size: 1rem;
 }
 
 .input-container input:focus {
@@ -58,4 +72,93 @@
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+  #root {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  .messages {
+    min-height: 350px;
+    max-height: 350px;
+  }
+
+  .message {
+    font-size: 0.95rem;
+  }
+
+  .message small {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #root {
+    max-width: 95%;
+    padding: 1rem;
+  }
+
+  .status {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+
+  .messages {
+    min-height: 300px;
+    max-height: 300px;
+    padding: 0.8rem;
+  }
+
+  .message {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .message small {
+    margin-top: 0.2rem;
+  }
+
+  .input-container {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .input-container input {
+    padding: 0.5em 1em;
+    font-size: 0.9rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.6em;
+  }
+}
+
+@media (max-width: 480px) {
+  #root {
+    padding: 0.5rem;
+  }
+
+  .status {
+    font-size: 0.8rem;
+  }
+
+  .messages {
+    min-height: 250px;
+    max-height: 250px;
+    padding: 0.5rem;
+  }
+
+  .message {
+    font-size: 0.85rem;
+    padding: 0.3rem;
+  }
+
+  .input-container input {
+    font-size: 0.85rem;
+  }
 }
