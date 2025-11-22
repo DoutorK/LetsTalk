@@ -26,35 +26,42 @@
 }
 
 .message {
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
-  border-radius: 4px;
-  background-color: #2a2a2a;
   display: flex;
-  position: relative; /* Adicionado para posicionamento absoluto do horário */
-  justify-content: space-between;
-  align-items: flex-start; /* Alinha o topo do texto e do horário */
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  align-self: flex-end;
+  background-color: #2a2a2a;
+  padding: 0.5rem 0.9rem 0.5rem 0.7rem;
+  margin-bottom: 0.5rem;
+  border-radius: 12px 12px 0 12px;
   font-size: 1rem;
   word-break: break-word;
+  width: auto;
+  max-width: 80%;
+  min-width: 80px;
+  box-sizing: border-box;
+  position: relative;
+  margin-left: auto;
 }
 
 .message span {
-  flex: 1;
-  margin-right: 1rem;
+  display: block;
   word-break: break-word;
   white-space: pre-wrap;
   min-width: 0;
+  margin-right: 0.7rem;
 }
 
 .message small {
   color: #888;
   font-size: 0.8rem;
-  position: absolute;
-  right: 0.7rem;
-  bottom: 0.4rem;
   margin: 0;
   padding: 0;
   background: transparent;
+  position: static;
+  align-self: flex-end;
+  white-space: nowrap;
 }
 
 .input-container {
