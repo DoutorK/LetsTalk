@@ -7,7 +7,6 @@ export default function registerSocket(io: Server) {
   io.on("connection", (socket: Socket) => {
     console.log("🟢 User connected:", socket.id);
 
-    // Assumindo userId de handshake (adicione middleware para validação real)
     const userId = socket.handshake.query.userId as string;
     if (!userId) {
       socket.disconnect();
