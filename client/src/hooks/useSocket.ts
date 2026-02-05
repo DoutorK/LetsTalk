@@ -11,12 +11,10 @@ export function useSocket() {
     const socketInstance = io(SOCKET_URL);
 
     socketInstance.on('connect', () => {
-      console.log('✅ Connected to server');
       setIsConnected(true);
     });
 
     socketInstance.on('disconnect', () => {
-      console.log('❌ Disconnected from server');
       setIsConnected(false);
     });
 
