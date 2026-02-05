@@ -3,19 +3,21 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node --loader ts-node/esm --enable-source-maps src/index.ts",
+    "dev": "node --loader ts-node/esm src/index.ts",
     "dev:watch": "ts-node-dev --respawn --transpile-only src/index.ts",
     "build": "tsc",
     "start": "node ./dist/index.js"
   },
   "dependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.3.1",
+    "bcrypt": "^6.0.0",
     "express": "^5.1.0",
-    "mongoose": "^8.18.0",
+    "mongoose": "^8.20.1",
     "socket.io": "^4.8.1",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.9.2",
-    "@types/node": "^24.3.1",
-    "@types/express": "^5.0.3"
+    "typescript": "^5.9.2"
   }
 }

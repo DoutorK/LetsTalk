@@ -1,42 +1,178 @@
 #root {
-  max-width: 1280px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.status {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: #1a1a1a;
+  font-size: 1rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.messages {
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 400px;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  background-color: #1a1a1a;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.message {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  align-self: flex-end;
+  background-color: #2a2a2a;
+  padding: 0.5rem 0.9rem 0.5rem 0.7rem;
+  margin-bottom: 0.5rem;
+  border-radius: 12px 12px 0 12px;
+  font-size: 1rem;
+  word-break: break-word;
+  width: auto;
+  max-width: 80%;
+  min-width: 80px;
+  box-sizing: border-box;
+  position: relative;
+  margin-left: auto;
 }
 
-.card {
-  padding: 2em;
+.message span {
+  display: block;
+  word-break: break-word;
+  white-space: pre-wrap;
+  min-width: 0;
+  margin-right: 0.7rem;
 }
 
-.read-the-docs {
+.message small {
   color: #888;
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  position: static;
+  align-self: flex-end;
+  white-space: nowrap;
+}
+
+.input-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.input-container input {
+  flex: 1;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background-color: #1a1a1a;
+  color: white;
+  font-size: 1rem;
+}
+
+.input-container input:focus {
+  outline: 2px solid #646cff;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+  #root {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  .messages {
+    min-height: 350px;
+    max-height: 350px;
+  }
+
+  .message {
+    font-size: 0.95rem;
+  }
+
+  .message small {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #root {
+    max-width: 95%;
+    padding: 1rem;
+  }
+
+  .status {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+
+  .messages {
+    min-height: 300px;
+    max-height: 300px;
+    padding: 0.8rem;
+  }
+
+  .message {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .message small {
+    margin-top: 0.2rem;
+  }
+
+  .input-container {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .input-container input {
+    padding: 0.5em 1em;
+    font-size: 0.9rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.6em;
+  }
+}
+
+@media (max-width: 480px) {
+  #root {
+    padding: 0.5rem;
+  }
+
+  .status {
+    font-size: 0.8rem;
+  }
+
+  .messages {
+    min-height: 250px;
+    max-height: 250px;
+    padding: 0.5rem;
+  }
+
+  .message {
+    font-size: 0.85rem;
+    padding: 0.3rem;
+  }
+
+  .input-container input {
+    font-size: 0.85rem;
+  }
 }
